@@ -33,11 +33,11 @@ interface MovieService {
 
 class MovieServiceImpl : MoviesServices(ApiLink.moviesApiLink) {
     suspend fun getSearchMovie(query: String): Response<Any> =
-        getRetrofit().create(MovieService::class.java).searchMovie(query, "")
+        getRetrofit().create(MovieService::class.java).searchMovie(query, "55530312075972a425f5fa13e21b218f")
 
     suspend fun getSimilarMovie(id: String): Response<Any> =
-        getRetrofit().create(MovieService::class.java).similarMovie(id, "")
+        getRetrofit().create(MovieService::class.java).similarMovie(id, "55530312075972a425f5fa13e21b218f")
 
     suspend fun getTrendMovie(): Response<Any> =
-        getRetrofit().create(MovieService::class.java).trendMovie("")
+        getRetrofit().create(MovieService::class.java).trendMovie("55530312075972a425f5fa13e21b218f")
 }

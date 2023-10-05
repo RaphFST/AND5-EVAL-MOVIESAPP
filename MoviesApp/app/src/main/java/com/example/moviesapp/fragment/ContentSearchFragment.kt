@@ -1,4 +1,5 @@
-package com.example.moviesapp
+package com.example.moviesapp.fragment
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -6,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.moviesapp.R
 
-class trendingFragment : Fragment() {
+class ContentSearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,6 @@ class trendingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trending, container, false)
+        return inflater.inflate(R.layout.fragment_content_search, container, false)
     }
-
 }

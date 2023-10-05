@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation" />
+        app:navGraph="@navigation/navigation"
+        android:background="@color/black"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline76Bottom"

@@ -7,17 +7,21 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.moviesapp.searchFragment"
+        android:name="com.example.moviesapp.fragment.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.moviesapp.detailsFragment"
+        android:name="com.example.moviesapp.fragment.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
     <fragment
         android:id="@+id/trendingFragment"
-        android:name="com.example.moviesapp.trendingFragment"
+        android:name="com.example.moviesapp.fragment.TrendingFragment"
         android:label="fragment_trending"
         tools:layout="@layout/fragment_trending" />
 </navigation>
