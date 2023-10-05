@@ -11,6 +11,6 @@ class MoviesApp : Application() {
 
     companion object {
         lateinit var instance: MoviesApp
-        private set
+            private set
     }
 }

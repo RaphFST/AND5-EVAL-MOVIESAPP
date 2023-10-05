@@ -1,13 +1,15 @@
 package com.example.moviesapp.fragment
 
+
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.moviesapp.R
+import com.example.moviesapp.databinding.FragmentInitialSearchBinding
 
 class InitialSearchFragment : Fragment() {
+    private var binding: FragmentInitialSearchBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -16,7 +18,12 @@ class InitialSearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_initial_search, container, false)
+        binding = FragmentInitialSearchBinding.inflate(inflater, container, false)
+        return binding?.root
+    }
+
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
     }
 }

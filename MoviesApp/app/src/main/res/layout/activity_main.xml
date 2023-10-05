@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation"
-        android:background="@color/black"/>
+        app:navGraph="@navigation/navigation" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline76Bottom"
@@ -31,9 +30,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="visible"
-        app:backgroundTint="@color/orange"
+        app:backgroundTint="@color/black"
         app:itemActiveIndicatorStyle="@color/white"
-        app:itemBackground="@color/orange"
+        app:itemBackground="@color/black"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:labelVisibilityMode="labeled"
