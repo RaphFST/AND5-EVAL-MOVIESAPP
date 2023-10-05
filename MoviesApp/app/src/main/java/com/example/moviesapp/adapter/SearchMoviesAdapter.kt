@@ -16,9 +16,9 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-class SearchMovieAdapter(
+class SearchMoviesAdapter(
     private val onItemClicked: (item: Movie) -> Unit
-) : ListAdapter<Movie, SearchMovieAdapter.SearchMovieViewHolder>(DiffCallback) {
+) : ListAdapter<Movie, SearchMoviesAdapter.SearchMovieViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Movie>() {

@@ -1,6 +1,5 @@
 package com.example.moviesapp.adapter
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,6 +10,7 @@ import com.example.moviesapp.databinding.SimilarMovieCellBinding
 import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.network.utils.ApiLink
 import com.squareup.picasso.Picasso
+
 class SimilarMovieAdapter(
     private val onItemClicked: (item: Movie) -> Unit
 ) : ListAdapter<Movie, SimilarMovieAdapter.SimilarMovieViewHolder>(DiffCallback) {

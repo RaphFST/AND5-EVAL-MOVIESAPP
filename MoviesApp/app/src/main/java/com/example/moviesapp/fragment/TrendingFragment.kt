@@ -16,7 +16,7 @@ import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.viewModel.MovieViewModel
 import com.example.moviesapp.viewModel.MovieViewModelFactory
 
-class TrendFragment : Fragment() {
+class TrendingFragment : Fragment() {
     private var binding: FragmentTrendingBinding? = null
     private val viewModel: MovieViewModel by activityViewModels {
         MovieViewModelFactory()
