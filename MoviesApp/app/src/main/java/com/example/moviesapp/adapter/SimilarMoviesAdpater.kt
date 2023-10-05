@@ -11,9 +11,9 @@ import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.network.utils.ApiLink
 import com.squareup.picasso.Picasso
 
-class SimilarMovieAdapter(
+class SimilarMoviesAdpater(
     private val onItemClicked: (item: Movie) -> Unit
-) : ListAdapter<Movie, SimilarMovieAdapter.SimilarMovieViewHolder>(DiffCallback) {
+) : ListAdapter<Movie, SimilarMoviesAdpater.SimilarMovieViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Movie>() {

@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesapp.adapter.SearchMovieAdapter
+import com.example.moviesapp.adapter.SearchMoviesAdapter
 import com.example.moviesapp.databinding.FragmentContentSearchBinding
 import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.viewModel.MovieViewModel
@@ -44,7 +44,7 @@ class ContentSearchFragment(private val input: String) : Fragment() {
     private fun setupRecyclerView() {
         recyclerView = binding?.containerRecyclerSearchedMovie
         recyclerView?.layoutManager = LinearLayoutManager(activity)
-        val itemAdapter = SearchMovieAdapter { goToDetails(it) }
+        val itemAdapter = SearchMoviesAdapter { goToDetails(it) }
         recyclerView?.adapter = itemAdapter
         viewModel.getSearchMovie(input) { movies ->
             itemAdapter.submitList(movies)

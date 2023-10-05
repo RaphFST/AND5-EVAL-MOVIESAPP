@@ -12,9 +12,9 @@ import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.network.utils.ApiLink
 import com.squareup.picasso.Picasso
 
-class TrendMoviesAdapter(
+class TrendingMoviesAdapter(
     private val onItemClicked: (item: Movie) -> Unit
-) : ListAdapter<Movie, TrendMoviesAdapter.TrendMovieViewHolder>(DiffCallback) {
+) : ListAdapter<Movie, TrendingMoviesAdapter.TrendMovieViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Movie>() {

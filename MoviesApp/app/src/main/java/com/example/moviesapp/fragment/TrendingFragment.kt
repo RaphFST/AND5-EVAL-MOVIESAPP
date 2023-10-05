@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moviesapp.adapter.TrendMovieAdapter
+import com.example.moviesapp.adapter.TrendingMoviesAdapter
 import com.example.moviesapp.databinding.FragmentTrendingBinding
 import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.viewModel.MovieViewModel
@@ -44,7 +44,7 @@ class TrendingFragment : Fragment() {
     private fun setupRecyclerView() {
         recyclerView = binding?.containerRecyclerTrendMovie
         recyclerView?.layoutManager = GridLayoutManager(activity, 3)
-        val itemAdapter = TrendMovieAdapter { goToDetails(it) }
+        val itemAdapter = TrendingMoviesAdapter { goToDetails(it) }
         recyclerView?.adapter = itemAdapter
         viewModel.getTrendMovie { movies ->
             itemAdapter.submitList(movies)
