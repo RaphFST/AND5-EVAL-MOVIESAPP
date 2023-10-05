@@ -7,9 +7,9 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
     private lateinit var navController: NavController

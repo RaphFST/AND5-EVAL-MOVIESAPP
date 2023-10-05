@@ -1,24 +1,19 @@
 package com.example.moviesapp.adapter
 
-import android.os.Build
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapp.R
-import com.example.moviesapp.databinding.SearchMoviesCellBinding
+import com.example.moviesapp.databinding.SimilarMovieCellBinding
 import com.example.moviesapp.network.dto.Movie
 import com.example.moviesapp.network.utils.ApiLink
 import com.squareup.picasso.Picasso
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Locale
-
-class SearchMovieAdapter(
+class SimilarMovieAdapter(
     private val onItemClicked: (item: Movie) -> Unit
-) : ListAdapter<Movie, SearchMovieAdapter.SearchMovieViewHolder>(DiffCallback) {
+) : ListAdapter<Movie, SimilarMovieAdapter.SimilarMovieViewHolder>(DiffCallback) {
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Movie>() {
@@ -38,9 +33,9 @@ class SearchMovieAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchMovieViewHolder {
-        val viewHolder = SearchMovieViewHolder(
-            SearchMoviesCellBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimilarMovieViewHolder {
+        val viewHolder = SimilarMovieViewHolder(
+            SimilarMovieCellBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -53,21 +48,17 @@ class SearchMovieAdapter(
         return viewHolder
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onBindViewHolder(holder: SearchMovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SimilarMovieViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class SearchMovieViewHolder(
-        private var binding: SearchMoviesCellBinding
+    class SimilarMovieViewHolder(
+        private var binding: SimilarMovieCellBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        @RequiresApi(Build.VERSION_CODES.O)
         fun bind(movie: Movie) {
             setupImage(ApiLink.imageMovieApi + movie.poster)
-            binding.txtTitleMovieSearch.text = movie.title
-            binding.txtReleaseMovieSearch.text = setDateTxt(movie.release)
-            binding.txtVoteSearchMovie.text = movie.vote.toString()
+            binding.txtTitleMovieSimilar.text = movie.title
         }
 
         private fun setupImage(url: String) {
@@ -77,14 +68,7 @@ class SearchMovieAdapter(
                 .error(R.drawable.image_placeholder)
                 .fit()
                 .centerCrop()
-                .into(binding.imgMovieSearch)
-        }
-
-        @RequiresApi(Build.VERSION_CODES.O)
-        private fun setDateTxt(dateString: String): String? {
-            val localDate = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-            val dtf = DateTimeFormatter.ofPattern("MMM dd, uuuu", Locale.ENGLISH)
-            return dtf.format(localDate)
+                .into(binding.imgMovieSimilar)
         }
 
     }

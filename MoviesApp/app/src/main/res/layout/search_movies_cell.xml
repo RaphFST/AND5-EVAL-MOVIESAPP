@@ -57,7 +57,7 @@
         android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="4dp"
         android:background="@drawable/rounded_background_card"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/orange"
         android:padding="8dp"
         android:text="@string/no_content"
         android:textColor="@color/white"
